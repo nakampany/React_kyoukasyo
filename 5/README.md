@@ -16,3 +16,11 @@
 
 ### CSS Module
 - [name].module.css
+
+### style JSX
+- Nextjsに標準で組み込まれているライブラリ
+```
+    <styled jsx>{`
+　　// ここにCSS
+    `}</styled>
+```
