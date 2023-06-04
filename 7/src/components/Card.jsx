@@ -1,12 +1,10 @@
-import React from 'react'
 import { EditButton } from './EditButton'
 
-export const Card = (props) => {
-  const { isAdmin } = props;
+export const Card = () => {
   return (
     <div style={style}>
       <p>山田</p>
-      <EditButton isAdmin={isAdmin} />
+      <EditButton/>
     </div>
   )
 }
