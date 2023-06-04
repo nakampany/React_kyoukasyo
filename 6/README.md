@@ -18,7 +18,7 @@
 3.useMemo
 
 ### memo
-- memo化とは、前回の処理結果を保持しておくことで処理を高速化する
+### memo化とは、前回の処理結果を保持しておくことで処理を高速化する
 - 親コンポーネントが再レンダリングしても、子コンポーネントの再レンダリングを防ぐことができる
 
 
@@ -49,9 +49,30 @@ export const Child4 = memo(() => {
 
 - コンポーネントは、Propsに変化がない限り、再レンダリングされない
 ### useCallback
-- 
+### 関数のmemo化
+- カウントアップの度にAppとChild1が再レンダリングしてしまう
+- Propsが変更されているわけではないのに。。。。
+### 関数の再生成が行われている
+- 再レンダリング等でコードが実行されるたび、常に新しい関数が生成される。
+```jsx
+const onClickReset = () => {
+  setNum(0);
+};
+```
+- そのためPropsが変化したと判定
+
+```jsx
+const onClickButton = useCallback(() => {
+  alert("ボタンが押されました！")
+}, []);
+
+const onClickReset = useCallback(() => {
+  setNum(0);
+}, []);
+```
 
 ### useMemo
+### 
 - 
 
 
