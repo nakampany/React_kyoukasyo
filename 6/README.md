@@ -72,9 +72,20 @@ const onClickReset = useCallback(() => {
 ```
 
 ### useMemo
-### 
-- 
+### 変数のメモ化
+- 『第一引数：関数に設定する値の返却』、『第二引数：依存配列』
+- 『第二引数：依存配列』で　[]　とは、初回読み込まれた時のみ『１＋３』の計算を実行
+```jsx
+const sum = useMemo(() => {
+  return 1+ 3;
+}, []);
+```
 
-
+- 第二引数の count1 が変更された時に再評価され、表示が変わります。
+```jsx
+const sum = useMemo(() => {
+  return count1 + count2;
+}, [count1]);
+```
 
 
