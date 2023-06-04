@@ -22,6 +22,7 @@
 - 親コンポーネントが再レンダリングしても、子コンポーネントの再レンダリングを防ぐことができる
 
 
+
 ```jsx
 const Component = memo(() => {});
 ```
@@ -45,7 +46,10 @@ export const Child4 = memo(() => {
   ...(APPの子)
 });
 ```
-
+改善前
+![スクリーンショット 2023-06-04 午後16 51 58 午後](https://github.com/nakampany/React_kyoukasyo/assets/103278404/e42cfdd8-15bd-4dab-bfed-96c4684e8822)
+→改善後
+![スクリーンショット 2023-06-04 午後17 03 48 午後](https://github.com/nakampany/React_kyoukasyo/assets/103278404/f8138560-dfaf-4bf8-a23e-cd64fc2aa37d)
 
 - コンポーネントは、Propsに変化がない限り、再レンダリングされない
 ### useCallback
@@ -54,6 +58,7 @@ export const Child4 = memo(() => {
 - Propsが変更されているわけではないのに。。。。
 ### 関数の再生成が行われている
 - 再レンダリング等でコードが実行されるたび、常に新しい関数が生成される。
+
 ```jsx
 const onClickReset = () => {
   setNum(0);
@@ -70,11 +75,17 @@ const onClickReset = useCallback(() => {
   setNum(0);
 }, []);
 ```
+改善前
+![スクリーンショット 2023-06-04 午後17 10 08 午後](https://github.com/nakampany/React_kyoukasyo/assets/103278404/1d062304-0f17-4622-aa4b-396bb4bf68ae)
+→改善後
+![スクリーンショット 2023-06-04 午後17 18 48 午後](https://github.com/nakampany/React_kyoukasyo/assets/103278404/4d8a44bb-538e-4ee3-a6be-d8e171cfd8d3)
+
 
 ### useMemo
 ### 変数のメモ化
 - 『第一引数：関数に設定する値の返却』、『第二引数：依存配列』
 - 『第二引数：依存配列』で　[]　とは、初回読み込まれた時のみ『１＋３』の計算を実行
+
 ```jsx
 const sum = useMemo(() => {
   return 1+ 3;
