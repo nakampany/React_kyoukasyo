@@ -1,6 +1,7 @@
 ## Propsのバケツリレー
 ### Propsが受け継がれていくのはしんどい。。。
 
+### バケツリレーすることなくStateの参照、更新をしたい
 ## ContextでState管理
 ### React.createContextでContextの器を作成
 ```jsx
@@ -64,3 +65,12 @@ export const EditButton = (props) => {
   )
 }
 ```
+
+
+## どんな時にグローバル管理するの？
+### →ログインしているユーザー情報
+### どのページにいても、右上に情報を表示するandログインユーザーの情報に応じて、制御することが多い
+
+## Redux(Stateをグローバル管理できる)
+## Recoil
+## Apollo Client
