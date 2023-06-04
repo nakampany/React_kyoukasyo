@@ -6,5 +6,12 @@
 ```
 ｃｍｄ + optin + i
 ```
+### [コアウェブバイタル（Core Web Vitals）](https://gmotech.jp/semlabo/seo/blog/core-web-vitals/)
+- LCP（Largest Contentful Paint ）：読み込み時間(ページの読み込む速さ)
+  - 2.5秒以内がGOOD（良好）、4.0秒以上かかってしまうとPOOR（不十分）
+- FID（First Input Delay）：インタラクティブ性（ユーザーのアクションへの反応の速さ）
+  - ユーザーが何らかのアクションを起こしてから100ミリ秒未満がGOOD（良好）、300ミリ秒以上かかってしまうとPOOR（不十分）
+- CLS（Cumulative Layout Shift ）：ページコンテンツの視聴的安全性（レイアウトのずれが起きないか）
+  - 「ズレが生じた表示領域の比率 × 距離の比率」で計算し、0.1未満がGOOD（良好）、0.25以上だとPOOR（不十分）
 
 ![image](https://github.com/nakampany/React_kyoukasyo/assets/103278404/5ea3514e-93fe-4e4e-9b3f-5d7db7539edd)
