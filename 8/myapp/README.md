@@ -43,7 +43,7 @@ export const ListItem: FC<User> = (props) => {
 ```
 
 # もしAPI情報追加するとなれば
-実行するまでhobbyが設定されるわからない。
+実行するまでhobbyが設定されるわからない場合
 ```jsx
 export type User = {
   id: number;
