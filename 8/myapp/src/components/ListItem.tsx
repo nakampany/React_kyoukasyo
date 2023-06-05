@@ -7,20 +7,15 @@
 //   )
 // }
 
+import {FC} from "react";
+import { User } from "../types/type";
 
-type User = {
-  id: number;
-  name: string;
-  age: number;
-  personalColor: string;
-}
-
-export const ListItem = (props: User) => {
-  const { id, name, age, personalColor } = props;
+export const ListItem: FC<User> = (props) => {
+  const { id, name, age, personalColor, hobby } = props;
   return (
     <div>
       <p style={{color: personalColor}}>
-      {id}: {name}({age})
+      {id}: {name}({age}) {hobby?.join("/")}
       </p>
     </div>
   )
