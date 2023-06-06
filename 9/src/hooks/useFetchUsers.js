@@ -1,13 +1,29 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 
 
 export const useFetchUsers = () => {
-  const [useList, setUseList] = useState([{id: 1}])
+  const [userList, setUserList] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const onClickFetchUser = () => {
-    alert('取得')
-  }
+    setIsLoading(true);
+    setIsError(false);
 
-  return { useList, onClickFetchUser }
+    axios.get("https://example.com/users")
+    .then(result => {
+      const users = result.data.map(user => ({
+        id: user.id,
+        name: `${user.first_name} ${user.last_name}`,
+        age: user.age,
+      }));
+      setUserList(users);
+      })
+      .catch(() => setIsError(true))
+      .finally(() => setIsLoading(false));
+    };
+
+  return { userList, onClickFetchUser, isLoading, isError }
 }
