@@ -14,4 +14,15 @@
 - CLS（Cumulative Layout Shift ）：ページコンテンツの視聴的安全性（レイアウトのずれが起きないか）
   - 「ズレが生じた表示領域の比率 × 距離の比率」で計算し、0.1未満がGOOD（良好）、0.25以上だとPOOR（不十分）
 
+## ステップアップするには
+- フロントエンドテスト
+- Nextjs
+- GraphQL
+- 複雑な状態管理（Redux）
+- 各種サーバレス周辺知識
+- DB知識
+- アクセシビリティ
+- PWA
+
 ![image](https://github.com/nakampany/React_kyoukasyo/assets/103278404/5ea3514e-93fe-4e4e-9b3f-5d7db7539edd)
+
